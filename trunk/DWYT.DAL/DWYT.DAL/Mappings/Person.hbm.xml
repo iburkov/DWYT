@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+	assembly="DWYT.Core"
+	namespace="DWYT.Core.DomainModels">
+
+  <class name="Person" table="People">
+    <id name="Id">
+      <generator class="guid" />
+    </id>
+    <property name="UserName" />
+    <property name="Password" />
+    <property name="FirstName" />
+    <property name="LastName" />
+    <list name="PersonRoles" lazy="false">
+      <key column="Id"/>
+      <index column="PersonId"/>
+      <one-to-many class="DWYT.Core.DomainModels.PersonRole"/>
+    </list>
+  </class>
+</hibernate-mapping>
