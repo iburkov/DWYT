@@ -69,6 +69,7 @@
     <Compile Include="DomainModels\PersonRole.cs" />
     <Compile Include="DomainModels\Role.cs" />
     <Compile Include="DomainModels\RolePermission.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Interfaces\RepositoryInterfaces\IRoleRepository.cs" />
     <Compile Include="DomainModels\DomainModel.cs" />
     <Compile Include="DomainModels\Person.cs" />
@@ -99,6 +100,8 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Enums\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
