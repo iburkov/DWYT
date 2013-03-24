@@ -11,6 +11,7 @@ namespace DWYT.Core.Enums
     /// </summary>
     public class ModelEnums
     {
+
         /// <summary>
         /// Possible role permissions.
         /// </summary>
