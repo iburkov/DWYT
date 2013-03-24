@@ -65,17 +65,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DomainModels\PersonInfo.cs" />
     <Compile Include="DomainModels\Permission.cs" />
     <Compile Include="DomainModels\PersonRole.cs" />
-    <Compile Include="DomainModels\PersonTimePlan.cs" />
-    <Compile Include="DomainModels\PersonTimePlanTemplate.cs" />
     <Compile Include="DomainModels\Role.cs" />
     <Compile Include="DomainModels\RolePermission.cs" />
-    <Compile Include="DomainModels\Task.cs" />
-    <Compile Include="DomainModels\TimePlan.cs" />
-    <Compile Include="DomainModels\TimePlanTemplate.cs" />
-    <Compile Include="Enums\ModelEnums.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Interfaces\RepositoryInterfaces\IRoleRepository.cs" />
     <Compile Include="DomainModels\DomainModel.cs" />
@@ -107,6 +100,8 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Enums\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
