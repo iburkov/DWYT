@@ -67,14 +67,19 @@
   <ItemGroup>
     <Compile Include="DomainModels\Permission.cs" />
     <Compile Include="DomainModels\PersonRole.cs" />
+    <Compile Include="DomainModels\PersonTimePlan.cs" />
     <Compile Include="DomainModels\Role.cs" />
     <Compile Include="DomainModels\RolePermission.cs" />
+    <Compile Include="DomainModels\PlanItem.cs" />
+    <Compile Include="DomainModels\TimePlan.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Interfaces\RepositoryInterfaces\IRoleRepository.cs" />
     <Compile Include="DomainModels\DomainModel.cs" />
     <Compile Include="DomainModels\Person.cs" />
     <Compile Include="Interfaces\RepositoryInterfaces\IGenericRepository.cs" />
     <Compile Include="Interfaces\RepositoryInterfaces\IPersonRepository.cs" />
+    <Compile Include="Interfaces\RepositoryInterfaces\ITaskRepository.cs" />
+    <Compile Include="Interfaces\RepositoryInterfaces\ITimePlanRepository.cs" />
     <Compile Include="ProjectBase\RepositoryRequestParams\RolesGetRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

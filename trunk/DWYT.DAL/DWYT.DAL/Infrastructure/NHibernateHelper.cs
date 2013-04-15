@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NHibernate;
+﻿using NHibernate;
 using NHibernate.Cfg;
 using DWYT.Core.DomainModels;
-using System.IO;
-using System.Reflection;
 
 namespace DWYT.DAL.Infrastructure
 {
-    class NHibernateHelper
+    internal class NHibernateHelper
     {
         private static ISessionFactory _sessionFactory;
         private static ISessionFactory SessionFactory
