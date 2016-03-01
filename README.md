@@ -1,1 +1,3 @@
-Time Management System
+TMS
+
+The purpose of this project is to build the system that will allow users to automatically select one of the renowned time management methodologies.
