@@ -1,2 +1,2 @@
 language: csharp
-solution: Tms\Tms.sln
+solution: Tms/Tms.sln
