@@ -3,7 +3,7 @@ overall build status:
 <img src="https://ci.appveyor.com/api/projects/status/dun5fiyfhbdntl4a?svg=true"/>
 
 feature/initial-project-structure build status:
-https://ci.appveyor.com/api/projects/status/dun5fiyfhbdntl4a/branch/feature/initial-project-structure?svg=true
+<img src="https://ci.appveyor.com/api/projects/status/dun5fiyfhbdntl4a/branch/feature/initial-project-structure?svg=true"/>
 
 TMS - Don't Waste Your Time Project
 
