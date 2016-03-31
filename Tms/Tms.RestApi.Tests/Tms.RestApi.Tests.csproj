@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DE399F8E-93B7-4B21-A026-796A8A912F31}</ProjectGuid>
+    <ProjectGuid>{1305F55A-6301-408D-95B7-05EC6F49FBE2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tms.Common</RootNamespace>
-    <AssemblyName>Tms.Common</AssemblyName>
+    <RootNamespace>Tms.RestApi.Tests</RootNamespace>
+    <AssemblyName>Tms.RestApi.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,8 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entensions\" />
-    <Folder Include="Helpers\" />
+    <ProjectReference Include="..\Tms.RestApi\Tms.RestApi.csproj">
+      <Project>{253b7641-a570-433a-bc64-dad7a755a064}</Project>
+      <Name>Tms.RestApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

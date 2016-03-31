@@ -80,6 +80,36 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tms.Common\Tms.Common.csproj">
+      <Project>{de399f8e-93b7-4b21-a026-796a8a912f31}</Project>
+      <Name>Tms.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tms.Contracts.Dal\Tms.Contracts.Dal.csproj">
+      <Project>{befbdd29-e913-4ce3-b097-e1447645f3ec}</Project>
+      <Name>Tms.Contracts.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tms.Contracts.Flows\Tms.Contracts.Flows.csproj">
+      <Project>{9ac33849-5966-47b8-92ee-2a640b2b039b}</Project>
+      <Name>Tms.Contracts.Flows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tms.Dal.MongoDb\Tms.Dal.MongoDb.csproj">
+      <Project>{1452a1e0-326c-43d6-b43e-b54c3f184a92}</Project>
+      <Name>Tms.Dal.MongoDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tms.Domain\Tms.Domain.csproj">
+      <Project>{64e1055b-7c49-43f2-a3e3-12fefab370c2}</Project>
+      <Name>Tms.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tms.Flows\Tms.Flows.csproj">
+      <Project>{b7fd86c5-e869-46f4-932d-071ec7750b01}</Project>
+      <Name>Tms.Flows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tms.Log\Tms.Log.csproj">
+      <Project>{a39f2953-b271-4a3d-a696-6395718b5485}</Project>
+      <Name>Tms.Log</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

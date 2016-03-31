@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DE399F8E-93B7-4B21-A026-796A8A912F31}</ProjectGuid>
+    <ProjectGuid>{1452A1E0-326C-43D6-B43E-B54C3F184A92}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tms.Common</RootNamespace>
-    <AssemblyName>Tms.Common</AssemblyName>
+    <RootNamespace>Tms.Dal.MongoDb</RootNamespace>
+    <AssemblyName>Tms.Dal.MongoDb</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,8 +43,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entensions\" />
-    <Folder Include="Helpers\" />
+    <ProjectReference Include="..\Tms.Common\Tms.Common.csproj">
+      <Project>{de399f8e-93b7-4b21-a026-796a8a912f31}</Project>
+      <Name>Tms.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tms.Contracts.Dal\Tms.Contracts.Dal.csproj">
+      <Project>{befbdd29-e913-4ce3-b097-e1447645f3ec}</Project>
+      <Name>Tms.Contracts.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tms.Domain\Tms.Domain.csproj">
+      <Project>{64e1055b-7c49-43f2-a3e3-12fefab370c2}</Project>
+      <Name>Tms.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
