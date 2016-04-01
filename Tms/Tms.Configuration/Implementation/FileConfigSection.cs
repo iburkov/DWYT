@@ -17,10 +17,7 @@ namespace Tms.Configuration.Implementation
             );
         }
 
-        public bool Exists()
-        {
-            return this.lazyCollection.Value == null;
-        }
+        public bool Exists => lazyCollection.Value != null;
 
         public string Name { get; }
 
@@ -28,19 +25,17 @@ namespace Tms.Configuration.Implementation
         {
             get
             {
-                NameValueCollection collection = this.lazyCollection.Value;
-
-                if (collection == null)
+                if (!this.Exists)
                 {
                     throw new ConfigurationErrorsException(
                         $"Could not locate section with name '{this.Name}' in app/web configuration file");
                 }
 
-                var settings = new Dictionary<string, string>(collection.AllKeys.Length);
+                var settings = new Dictionary<string, string>(this.lazyCollection.Value.AllKeys.Length);
 
-                foreach (var key in collection.AllKeys)
+                foreach (var key in this.lazyCollection.Value.AllKeys)
                 {
-                    settings.Add(key, collection[key]);
+                    settings.Add(key, this.lazyCollection.Value[key]);
                 }
 
                 return settings;

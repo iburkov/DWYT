@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,13 +42,18 @@
   <ItemGroup>
     <Compile Include="IConfigProvider.cs" />
     <Compile Include="IConfigSection.cs" />
-    <Compile Include="IHierarchicalConfigurationSection.cs" />
     <Compile Include="Implementation\FileConfigProvider.cs" />
     <Compile Include="Implementation\FileConfigSection.cs" />
-    <Compile Include="Implementation\GetSetting.cs" />
+    <Compile Include="Implementation\SettingConverter.cs" />
+    <Compile Include="IoC\ConfigModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Tms.Common\Tms.Common.csproj">
+      <Project>{DE399F8E-93B7-4B21-A026-796A8A912F31}</Project>
+      <Name>Tms.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

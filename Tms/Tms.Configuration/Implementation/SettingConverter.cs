@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 
 namespace Tms.Configuration.Implementation
 {
-    internal class GetSetting
+    internal class SettingConverter
     {
         internal static T As<T>(IDictionary<string, string> settings, string key)
         {
@@ -15,14 +16,17 @@ namespace Tms.Configuration.Implementation
 
             TypeConverter converter = TypeDescriptor.GetConverter(typeof(T));
 
-            var value = settings[key];
-            if (value == null)
-                throw new ArgumentException("No setting can be found for key " + key);
+            string value;
+
+            if (!settings.TryGetValue(key, out value))
+            {
+                throw new ConfigurationErrorsException($"No setting can be found for key '{key}'");
+            }
 
             return (T)converter.ConvertFromString(settings[key]);
         }
 
-        internal static T DefaultOrAs<T>(IDictionary<string, string> settings, string key)
+        internal static T DefaultOrAs<T>(IDictionary<string, string> settings, string key, T defaultValue = default(T))
         {
             if (string.IsNullOrEmpty(key))
             {
@@ -30,13 +34,14 @@ namespace Tms.Configuration.Implementation
             }
 
             TypeConverter converter = TypeDescriptor.GetConverter(typeof(T));
+
             try
             {
                 return (T)converter.ConvertFromString(settings[key]);
             }
             catch
             {
-                return default(T);
+                return defaultValue;
             }
         }
     }

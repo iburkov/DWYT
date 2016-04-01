@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using FluentAssertions;
@@ -33,7 +32,7 @@ namespace Tms.Configuration.Tests.FileConfig
         }
 
         [Theory]
-        //[InlineData("TestSettings")]
+        [InlineData("TestSettings")]
         [InlineData("appSettings")]
         public void Settings_Found(string name)
         {
@@ -67,7 +66,7 @@ namespace Tms.Configuration.Tests.FileConfig
         [InlineData(null)]
         [InlineData("")]
         [InlineData("404")]
-        public void Settings_No_Section_Found(string name)
+        public void Settings_Exception_No_Section_Found(string name)
         {
             //Arrange
             var configSection = new FileConfigSection(name);
@@ -79,6 +78,24 @@ namespace Tms.Configuration.Tests.FileConfig
             //Assert
             settingsAction.ShouldThrow<ConfigurationErrorsException>();
             settings.Should().BeNull();
+        }
+
+        [Theory]
+        [InlineData(null, false)]
+        [InlineData("", false)]
+        [InlineData("404", false)]
+        [InlineData("appSettings", true)]
+        [InlineData("TestSettings", true)]
+        public void Exists_Passed(string name, bool expected)
+        {
+            //Arrange
+            var configSection = new FileConfigSection(name);
+
+            //Act 
+            bool exists = configSection.Exists;
+
+            //Assert
+            exists.Should().Be(expected);
         }
     }
 }

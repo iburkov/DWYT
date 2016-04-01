@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Specialized;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Tms.Configuration
 {
     public interface IConfigProvider
     {
-        T GetSettingsAs<T>(string key);
+        T GetSetting<T>(string key);
 
-        T GetDefaultOrSettingAs<T>(string key, T defaultValue = default(T));
+        Task<T> GetSettingAsync<T>(string key);
 
-        T GetSettingsAs<T>(string section, string key);
+        T GetDefaultOrSetting<T>(string key, T defaultValue = default(T));
 
-        T GetDefaultOrSettingAs<T>(string section, string key, T defaultValue = default(T));
+        Task<T> GetDefaultOrSettingAsync<T>(string key, T defaultValue = default(T));
 
-        T GetSection<T>(string section) where T : IConfigSection;
+        T GetSetting<T>(string section, string key);
+
+        Task<T> GetSettingAsync<T>(string section, string key);
+
+        T GetDefaultOrSetting<T>(string section, string key, T defaultValue = default(T));
+
+        Task<T> GetDefaultOrSettingAsync<T>(string section, string key, T defaultValue = default(T));
+
+        IConfigSection GetSection(string section);
+
+        Task<IConfigSection> GetSectionAsync(string section);
     }
 }

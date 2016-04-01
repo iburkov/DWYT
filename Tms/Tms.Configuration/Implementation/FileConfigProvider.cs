@@ -1,34 +1,79 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Tms.Configuration.Implementation
 {
     public class FileConfigProvider : IConfigProvider
     {
-        public T GetSettingsAs<T>(string key)
+        private readonly Lazy<IDictionary<string, string>> lazyAppSettings;
+
+        public FileConfigProvider()
         {
-            throw new NotImplementedException();
+            this.lazyAppSettings = new Lazy<IDictionary<string, string>>(
+                   () => new FileConfigSection("appSettings").Settings
+               );
         }
 
-        public T GetDefaultOrSettingAs<T>(string key, T defaultValue = default(T))
+        public T GetSetting<T>(string key)
         {
-            throw new NotImplementedException();
+            return SettingConverter.As<T>(lazyAppSettings.Value, key);
         }
 
-        public T GetSettingsAs<T>(string section, string key)
+        public Task<T> GetSettingAsync<T>(string key)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(this.GetSetting<T>(key));
         }
 
-        public T GetDefaultOrSettingAs<T>(string section, string key, T defaultValue = default(T))
+        public T GetDefaultOrSetting<T>(string key, T defaultValue = default(T))
         {
-            throw new NotImplementedException();
+            return SettingConverter.DefaultOrAs(lazyAppSettings.Value, key, defaultValue);
         }
 
-        public T GetSection<T>(string section) where T : IConfigSection
+        public Task<T> GetDefaultOrSettingAsync<T>(string key, T defaultValue = default(T))
         {
-            throw new NotImplementedException();
+            return Task.FromResult(this.GetDefaultOrSetting(key, defaultValue));
         }
 
-        
+        public T GetSetting<T>(string section, string key)
+        {
+            var configSection = this.GetSection(section);
+
+            return SettingConverter.As<T>(configSection.Settings, key);
+        }
+
+        public Task<T> GetSettingAsync<T>(string section, string key)
+        {
+            return Task.FromResult(this.GetSetting<T>(section, key));
+        }
+
+        public Task<T> GetDefaultOrSettingAsync<T>(string section, string key, T defaultValue = default(T))
+        {
+            return Task.FromResult(this.GetDefaultOrSetting(section, key, defaultValue));
+        }
+
+        public T GetDefaultOrSetting<T>(string section, string key, T defaultValue = default(T))
+        {
+            var configSection = this.GetSection(section);
+
+            if (!configSection.Exists)
+            {
+                return defaultValue;
+            }
+
+            return SettingConverter.As<T>(configSection.Settings, key);
+        }
+
+        public IConfigSection GetSection(string section)
+        {
+            IConfigSection configSection = new FileConfigSection(section);
+
+            return configSection;
+        }
+
+        public Task<IConfigSection> GetSectionAsync(string section)
+        {
+            return Task.FromResult(this.GetSection(section));
+        }
     }
 }

@@ -4,7 +4,7 @@ namespace Tms.Configuration
 {
     public interface IConfigSection
     {   
-        bool Exists();
+        bool Exists { get; }
 
         string Name { get; }
 
