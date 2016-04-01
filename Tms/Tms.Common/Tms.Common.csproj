@@ -73,6 +73,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entensions\EnumerableExtensions.cs" />
     <Compile Include="IoC\IModule.cs" />
     <Compile Include="IoC\IModuleRegister.cs" />
     <Compile Include="IoC\ModuleLifetime.cs" />
@@ -81,7 +82,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entensions\" />
     <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>

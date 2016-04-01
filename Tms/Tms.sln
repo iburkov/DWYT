@@ -3,6 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
+
+
+
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tms.Common", "Tms.Common\Tms.Common.csproj", "{DE399F8E-93B7-4B21-A026-796A8A912F31}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tms.RestApi", "Tms.RestApi\Tms.RestApi.csproj", "{253B7641-A570-433A-BC64-DAD7A755A064}"
