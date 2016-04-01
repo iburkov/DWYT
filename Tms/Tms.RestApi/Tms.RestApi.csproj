@@ -105,10 +105,6 @@
       <Project>{b7fd86c5-e869-46f4-932d-071ec7750b01}</Project>
       <Name>Tms.Flows</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tms.Log\Tms.Log.csproj">
-      <Project>{a39f2953-b271-4a3d-a696-6395718b5485}</Project>
-      <Name>Tms.Log</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

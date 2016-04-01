@@ -55,10 +55,6 @@
       <Project>{9ac33849-5966-47b8-92ee-2a640b2b039b}</Project>
       <Name>Tms.Contracts.Flows</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tms.Log\Tms.Log.csproj">
-      <Project>{a39f2953-b271-4a3d-a696-6395718b5485}</Project>
-      <Name>Tms.Log</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
