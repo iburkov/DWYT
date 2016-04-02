@@ -10,7 +10,7 @@ namespace Tms.Dal.MongoDb.IoC
     {
         public void Initialize(IModuleRegister register)
         {
-            register.RegisterType<IRepository, Repository>();
+            //register.RegisterType<IRepository, Repository>();
         }
     }
 }
