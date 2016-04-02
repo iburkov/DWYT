@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Threading.Tasks;
 
 namespace Tms.Configuration.Implementation
 {
-    public class FileConfigProvider : IConfigProvider
+    public sealed class FileConfigProvider : IConfigProvider
     {
         private readonly Lazy<IDictionary<string, string>> lazyAppSettings;
 
@@ -13,6 +14,16 @@ namespace Tms.Configuration.Implementation
             this.lazyAppSettings = new Lazy<IDictionary<string, string>>(
                    () => new FileConfigSection("appSettings").Settings
                );
+        }
+
+        public string GetConnectionString(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+        }
+
+        public Task<string> GetConnectionStringAsync(string name)
+        {
+            return Task.FromResult(this.GetConnectionString(name));
         }
 
         public T GetSetting<T>(string key)

@@ -4,6 +4,10 @@ namespace Tms.Configuration
 {
     public interface IConfigProvider
     {
+        string GetConnectionString(string name);
+
+        Task<string> GetConnectionStringAsync(string name);
+
         T GetSetting<T>(string key);
 
         Task<T> GetSettingAsync<T>(string key);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Tms.Common.Constants;
 using Tms.Configuration;
 
 namespace Tms.RestApi.Controllers
@@ -23,7 +24,7 @@ namespace Tms.RestApi.Controllers
                 IsAlive = true,
                 Date = DateTime.Now,
                 UtcDate = DateTime.UtcNow,
-                Environment = await config.GetSettingAsync<string>("Environment")
+                Environment = await config.GetSettingAsync<string>(ConfigKeys.Environment)
             });
         }
     }

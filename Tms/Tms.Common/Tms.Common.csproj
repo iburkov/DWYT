@@ -73,6 +73,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\ConfigKeys.cs" />
     <Compile Include="Entensions\EnumerableExtensions.cs" />
     <Compile Include="IoC\IModule.cs" />
     <Compile Include="IoC\IModuleRegister.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Enums\" />
     <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
