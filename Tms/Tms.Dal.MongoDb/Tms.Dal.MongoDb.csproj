@@ -53,9 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\MongoConfigKeys.cs" />
     <Compile Include="IoC\MongoDbModule.cs" />
+    <Compile Include="Base\BsonMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\MongoRepository.cs" />
+    <Compile Include="Base\MongoRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tms.Common\Tms.Common.csproj">

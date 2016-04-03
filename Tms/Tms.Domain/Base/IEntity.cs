@@ -1,7 +1,13 @@
-﻿namespace Tms.Domain.Base
+﻿using System;
+
+namespace Tms.Domain.Base
 {
-    public interface IEntity<TKey>
+    public interface IEntity<out TKey>
     {
-        TKey Id { get; set; }
+        TKey Id { get; }
+
+        DateTime CreatedAt { get; set; }
+
+        DateTime ModifiedAt { get; set; }
     }
 }

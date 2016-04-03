@@ -1,4 +1,4 @@
-namespace Tms.Common.IoC
+namespace Tms.Common.Enums
 {
     public enum ModuleLifetime
     {

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Composition;
+using Tms.Common.Enums;
 using Tms.Common.IoC;
 using Tms.Configuration.Implementation;
 
